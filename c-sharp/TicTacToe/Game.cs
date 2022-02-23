@@ -29,7 +29,7 @@ namespace TicTacToe
                 }
             }
             //if not first move but player repeated
-            else if (symbol == _lastSymbol)
+            else if (IsRepeatedMove(symbol))
             {
                 throw new Exception("Invalid next player");
             }
@@ -42,6 +42,11 @@ namespace TicTacToe
             // update game state
             _lastSymbol = symbol;
             _board.AddTileAt(symbol, x, y);
+        }
+
+        private bool IsRepeatedMove(char symbol)
+        {
+            return symbol == _lastSymbol;
         }
 
         private static bool IsPlayerO(char symbol)
