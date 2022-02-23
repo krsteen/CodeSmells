@@ -26,7 +26,11 @@ namespace TicTacToe
                 throw new Exception("Invalid position");
             }
 
-            // update game state
+            UpdateGameState(symbol, x, y);
+        }
+
+        private void UpdateGameState(char symbol, int x, int y)
+        {
             _lastSymbol = symbol;
             _board.AddTileAt(symbol, x, y);
         }
