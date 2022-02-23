@@ -26,9 +26,9 @@ namespace TicTacToe
                 }  
             }       
         }
-       public Tile TileAt(int x, int y)
+       public Tile TileAt(int x, int y) // DATA CLUMP
        {
-           return _plays.Single(tile => tile.X == x && tile.Y == y); 
+           return _plays.Single(tile => tile.X == x && tile.Y == y);
        }
 
        public void AddTileAt(char symbol, int x, int y)
@@ -49,7 +49,7 @@ namespace TicTacToe
         private char _lastSymbol = ' ';
         private Board _board = new Board();
         
-        public void Play(char symbol, int x, int y)  //LONG PARAMETER LIST,  COMMENTS, COULD ME METHODS INSTEAD
+        public void Play(char symbol, int x, int y)  //LONG PARAMETER LIST, SHOTGUN SURGERY, COMMENTS, COULD ME METHODS INSTEAD
         {
             //if first move
             if(_lastSymbol == ' ') //PRIMITIVE OBSESSION
@@ -66,7 +66,7 @@ namespace TicTacToe
                 throw new Exception("Invalid next player");
             }
             //if not first move but play on an already played tile
-            else if (_board.TileAt(x, y).Symbol != ' ')
+            else if (_board.TileAt(x, y).Symbol != ' ') // MESSAGE CHAINS
             {
                 throw new Exception("Invalid position");
             }
@@ -76,7 +76,7 @@ namespace TicTacToe
             _board.AddTileAt(symbol, x, y);
         }
 
-        public char Winner() //FEATURE ENVY, LONG METHOD, COMMENTS, COULD ME METHODS INSTEAD
+        public char Winner() //FEATURE ENVY, LONG METHOD, COMMENTS, COULD BE METHODS INSTEAD
         {   //if the positions in first row are taken
             if(_board.TileAt(0, 0).Symbol != ' ' &&
                _board.TileAt(0, 1).Symbol != ' ' &&
