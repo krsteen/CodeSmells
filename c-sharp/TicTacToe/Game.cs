@@ -4,9 +4,12 @@ using System.Collections.Generic;
 
 namespace TicTacToe
 {
+    // Data class
     public class Tile
     {
-        public int X {get; set;}
+        // Data clump
+        public int X {get; set; }
+        // Data clump, turn into one object
         public int Y {get; set;}
         public char Symbol {get; set;}
     }
@@ -25,11 +28,15 @@ namespace TicTacToe
                 }  
             }       
         }
+        // Data clump
        public Tile TileAt(int x, int y)
        {
            return _plays.Single(tile => tile.X == x && tile.Y == y);
        }
 
+       // Primitive obsession
+       // Dead code
+       // Middle man
        public void AddTileAt(char symbol, int x, int y)
        {
            var newTile = new Tile
@@ -39,20 +46,25 @@ namespace TicTacToe
                Symbol = symbol
            };
 
+            // Message chain
            _plays.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
        }
     }
 
+    // Large class
     public class Game
     {
         private char _lastSymbol = ' ';
         private Board _board = new Board();
         
+        // Maybe too long
         public void Play(char symbol, int x, int y)
         {
+            // Unreliable comments
             //if first move
             if(_lastSymbol == ' ')
             {
+                // Gaslighting comment
                 //if player is X
                 if(symbol == 'O')
                 {
@@ -75,6 +87,9 @@ namespace TicTacToe
             _board.AddTileAt(symbol, x, y);
         }
 
+        // Method too long
+        // Feature envy
+        // Duplicated code
         public char Winner()
         {   //if the positions in first row are taken
             if(_board.TileAt(0, 0).Symbol != ' ' &&
