@@ -29,6 +29,28 @@ namespace TicTacToe
             UpdateGameState(symbol, x, y);
         }
 
+        // Feature envy
+        // Duplicated code
+        public char Winner()
+        {
+            if (IsRowTaken(0) && IsRowSameSymbol(0))
+            {
+                return _board.TileAt(0, 0).Symbol;
+            }
+
+            if (IsRowTaken(1) && IsRowSameSymbol(1))
+            {
+                return _board.TileAt(1, 0).Symbol;
+            }
+
+            if (IsRowTaken(2) && IsRowSameSymbol(2))
+            {
+                return _board.TileAt(2, 0).Symbol;
+            }
+
+            return ' ';
+        }
+
         private void UpdateGameState(char symbol, int x, int y)
         {
             _lastSymbol = symbol;
@@ -53,28 +75,6 @@ namespace TicTacToe
         private bool IsFirstMove()
         {
             return _lastSymbol == ' ';
-        }
-
-        // Feature envy
-        // Duplicated code
-        public char Winner()
-        {
-            if (IsRowTaken(0) && IsRowSameSymbol(0))
-            {
-                return _board.TileAt(0, 0).Symbol;
-            }
-
-            if (IsRowTaken(1) && IsRowSameSymbol(1))
-            {
-                return _board.TileAt(1, 0).Symbol;
-            }
-
-            if (IsRowTaken(2) && IsRowSameSymbol(2))
-            {
-                return _board.TileAt(2, 0).Symbol;
-            }
-
-            return ' ';
         }
 
         private bool IsRowSameSymbol(int row)
