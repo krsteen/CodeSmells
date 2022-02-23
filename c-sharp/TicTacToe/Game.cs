@@ -4,7 +4,8 @@ using System.Collections.Generic;
 
 namespace TicTacToe
 {
-    public class Tile
+    //Large file, multiple classes in same file
+    public class Tile //DATA CLASS
     {
         public int X {get; set;}
         public int Y {get; set;}
@@ -27,7 +28,7 @@ namespace TicTacToe
         }
        public Tile TileAt(int x, int y)
        {
-           return _plays.Single(tile => tile.X == x && tile.Y == y);
+           return _plays.Single(tile => tile.X == x && tile.Y == y); 
        }
 
        public void AddTileAt(char symbol, int x, int y)
@@ -39,19 +40,19 @@ namespace TicTacToe
                Symbol = symbol
            };
 
-           _plays.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
-       }
+           _plays.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol; //DUPLICATE CODE, SEE TileAt method
+        }
     }
 
-    public class Game
+    public class Game //LARGE CLASS, PRIMITVE OBSESSION
     {
         private char _lastSymbol = ' ';
         private Board _board = new Board();
         
-        public void Play(char symbol, int x, int y)
+        public void Play(char symbol, int x, int y)  //LONG PARAMETER LIST,  COMMENTS, COULD ME METHODS INSTEAD
         {
             //if first move
-            if(_lastSymbol == ' ')
+            if(_lastSymbol == ' ') //PRIMITIVE OBSESSION
             {
                 //if player is X
                 if(symbol == 'O')
@@ -75,7 +76,7 @@ namespace TicTacToe
             _board.AddTileAt(symbol, x, y);
         }
 
-        public char Winner()
+        public char Winner() //FEATURE ENVY, LONG METHOD, COMMENTS, COULD ME METHODS INSTEAD
         {   //if the positions in first row are taken
             if(_board.TileAt(0, 0).Symbol != ' ' &&
                _board.TileAt(0, 1).Symbol != ' ' &&
