@@ -2,16 +2,6 @@
 
 namespace TicTacToe
 {
-    // Data class
-    public class Tile
-    {
-        // Data clump
-        public int X {get; set; }
-        // Data clump, turn into one object
-        public int Y {get; set;}
-        public char Symbol {get; set;}
-    }
-
     // Large class
     public class Game
     {
@@ -61,11 +51,10 @@ namespace TicTacToe
             return _lastSymbol == ' ';
         }
 
-        // Method too long
         // Feature envy
         // Duplicated code
         public char Winner()
-        {   
+        {
             if (IsRowTaken(0) && IsRowSameSymbol(0))
             {
                 return _board.TileAt(0, 0).Symbol;
