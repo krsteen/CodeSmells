@@ -40,7 +40,7 @@ namespace TicTacToe
 
             if (IsRowTaken(1) && IsRowSameSymbol(1))
             {
-                return _board.TileAt(1, 0).Symbol;
+                return GetSymbol(1, 0);
             }
 
             if (IsRowTaken(2) && IsRowSameSymbol(2))
@@ -49,6 +49,11 @@ namespace TicTacToe
             }
 
             return ' ';
+        }
+
+        private char GetSymbol(int x, int y)
+        {
+            return _board.TileAt(x,y).Symbol;
         }
 
         private void UpdateGameState(char symbol, int x, int y)
