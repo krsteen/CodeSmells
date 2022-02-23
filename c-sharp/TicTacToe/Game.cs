@@ -34,7 +34,7 @@ namespace TicTacToe
                 throw new Exception("Invalid next player");
             }
             //if not first move but play on an already played tile
-            else if (_board.TileAt(x, y).Symbol != ' ')
+            else if (IsAlreadyPlayedTile(x, y))
             {
                 throw new Exception("Invalid position");
             }
@@ -42,6 +42,11 @@ namespace TicTacToe
             // update game state
             _lastSymbol = symbol;
             _board.AddTileAt(symbol, x, y);
+        }
+
+        private bool IsAlreadyPlayedTile(int x, int y)
+        {
+            return _board.TileAt(x, y).Symbol != ' ';
         }
 
         private bool IsRepeatedMove(char symbol)
