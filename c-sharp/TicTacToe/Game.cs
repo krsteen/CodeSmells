@@ -21,12 +21,9 @@ namespace TicTacToe
         // Maybe too long
         public void Play(char symbol, int x, int y)
         {
-            if (IsFirstMove())
+            if (IsFirstMove() && IsPlayerO(symbol))
             {
-                if (IsPlayerO(symbol))
-                {
-                    throw new Exception("Invalid first player");
-                }
+                throw new Exception("Invalid first player");
             }
             if (!IsFirstMove() && IsRepeatedMove(symbol))
             {
