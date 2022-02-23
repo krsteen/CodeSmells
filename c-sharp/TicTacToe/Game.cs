@@ -21,13 +21,9 @@ namespace TicTacToe
         // Maybe too long
         public void Play(char symbol, int x, int y)
         {
-            // Unreliable comments
-            //if first move
             if (IsFirstMove())
             {
-                // Gaslighting comment
-                //if player is X
-                if (symbol == 'O')
+                if (IsPlayerO(symbol))
                 {
                     throw new Exception("Invalid first player");
                 }
@@ -46,6 +42,11 @@ namespace TicTacToe
             // update game state
             _lastSymbol = symbol;
             _board.AddTileAt(symbol, x, y);
+        }
+
+        private static bool IsPlayerO(char symbol)
+        {
+            return symbol == 'O';
         }
 
         private bool IsFirstMove()
