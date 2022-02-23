@@ -66,28 +66,19 @@ namespace TicTacToe
         // Duplicated code
         public char Winner()
         {   
-            if (IsRowTaken(0))
+            if (IsRowTaken(0) && IsRowSameSymbol(0))
             {
-                if (IsRowSameSymbol(0))
-                {
-                    return _board.TileAt(0, 0).Symbol;
-                }
+                return _board.TileAt(0, 0).Symbol;
             }
 
-            if (IsRowTaken(1))
+            if (IsRowTaken(1) && IsRowSameSymbol(1))
             {
-                if (IsRowSameSymbol(1))
-                {
-                    return _board.TileAt(1, 0).Symbol;
-                }
+                return _board.TileAt(1, 0).Symbol;
             }
 
-            if (IsRowTaken(2))
+            if (IsRowTaken(2) && IsRowSameSymbol(2))
             {
-                if (IsRowSameSymbol(2))
-                {
-                    return _board.TileAt(2, 0).Symbol;
-                }
+                return _board.TileAt(2, 0).Symbol;
             }
 
             return ' ';
