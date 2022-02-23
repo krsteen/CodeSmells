@@ -86,10 +86,7 @@ namespace TicTacToe
                 }
             }
 
-            //if the positions in first row are taken
-            if (_board.TileAt(2, 0).Symbol != ' ' &&
-               _board.TileAt(2, 1).Symbol != ' ' &&
-               _board.TileAt(2, 2).Symbol != ' ')
+            if (IsRowTaken(2))
             {
                 //if middle row is full with same symbol
                 if (_board.TileAt(2, 0).Symbol ==
