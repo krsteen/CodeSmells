@@ -34,7 +34,7 @@ namespace TicTacToe
                 throw new Exception("Invalid next player");
             }
             //if not first move but play on an already played tile
-            else if (IsAlreadyPlayedTile(x, y))
+            if (!IsFirstMove() && IsAlreadyPlayedTile(x, y))
             {
                 throw new Exception("Invalid position");
             }
