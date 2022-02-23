@@ -28,12 +28,10 @@ namespace TicTacToe
                     throw new Exception("Invalid first player");
                 }
             }
-            //if not first move but player repeated
-            else if (IsRepeatedMove(symbol))
+            if (!IsFirstMove() && IsRepeatedMove(symbol))
             {
                 throw new Exception("Invalid next player");
             }
-            //if not first move but play on an already played tile
             if (!IsFirstMove() && IsAlreadyPlayedTile(x, y))
             {
                 throw new Exception("Invalid position");
