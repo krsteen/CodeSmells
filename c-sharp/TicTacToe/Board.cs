@@ -13,7 +13,7 @@ namespace TicTacToe
             {
                 for (int j = 0; j < 3; j++)
                 {
-                    _plays.Add(new Tile{ X = i, Y = j, Symbol = ' '});
+                    _plays.Add(new Tile{ X = i, Y = j, Symbol = Symbol.Empty});
                 }  
             }       
         }
