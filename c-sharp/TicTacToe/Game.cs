@@ -66,9 +66,8 @@ namespace TicTacToe
         // Duplicated code
         public char Winner()
         {   
-            if (IsFirstRowTaken())
+            if (IsRowTaken(0))
             {
-                //if first row is full with same symbol
                 if (IsFirstRowSameSymbol())
                 {
                     return _board.TileAt(0, 0).Symbol;
@@ -116,11 +115,11 @@ namespace TicTacToe
                                 _board.TileAt(0, 1).Symbol;
         }
 
-        private bool IsFirstRowTaken()
+        private bool IsRowTaken(int row)
         {
-            return _board.TileAt(0, 0).Symbol != ' ' &&
-                           _board.TileAt(0, 1).Symbol != ' ' &&
-                           _board.TileAt(0, 2).Symbol != ' ';
+            return _board.TileAt(row, 0).Symbol != ' ' &&
+                           _board.TileAt(row, 1).Symbol != ' ' &&
+                           _board.TileAt(row, 2).Symbol != ' ';
         }
     }
 }
