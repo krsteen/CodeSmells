@@ -39,13 +39,6 @@ namespace TicTacToe
        // Middle man
        public void AddTileAt(char symbol, int x, int y)
        {
-           var newTile = new Tile
-           {
-               X = x,
-               Y = y,
-               Symbol = symbol
-           };
-
             // Message chain
            _plays.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
        }
