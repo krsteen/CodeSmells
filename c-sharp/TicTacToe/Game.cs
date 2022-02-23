@@ -69,10 +69,7 @@ namespace TicTacToe
             if (IsFirstRowTaken())
             {
                 //if first row is full with same symbol
-                if (_board.TileAt(0, 0).Symbol ==
-                    _board.TileAt(0, 1).Symbol &&
-                    _board.TileAt(0, 2).Symbol ==
-                    _board.TileAt(0, 1).Symbol)
+                if (IsFirstRowSameSymbol())
                 {
                     return _board.TileAt(0, 0).Symbol;
                 }
@@ -109,6 +106,14 @@ namespace TicTacToe
             }
 
             return ' ';
+        }
+
+        private bool IsFirstRowSameSymbol()
+        {
+            return _board.TileAt(0, 0).Symbol ==
+                                _board.TileAt(0, 1).Symbol &&
+                                _board.TileAt(0, 2).Symbol ==
+                                _board.TileAt(0, 1).Symbol;
         }
 
         private bool IsFirstRowTaken()
