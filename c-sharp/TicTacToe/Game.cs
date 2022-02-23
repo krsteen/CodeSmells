@@ -68,7 +68,7 @@ namespace TicTacToe
         {   
             if (IsRowTaken(0))
             {
-                if (IsFirstRowSameSymbol())
+                if (IsRowSameSymbol(0))
                 {
                     return _board.TileAt(0, 0).Symbol;
                 }
@@ -101,12 +101,12 @@ namespace TicTacToe
             return ' ';
         }
 
-        private bool IsFirstRowSameSymbol()
+        private bool IsRowSameSymbol(int row)
         {
-            return _board.TileAt(0, 0).Symbol ==
-                                _board.TileAt(0, 1).Symbol &&
-                                _board.TileAt(0, 2).Symbol ==
-                                _board.TileAt(0, 1).Symbol;
+            return _board.TileAt(row, 0).Symbol ==
+                                _board.TileAt(row, 1).Symbol &&
+                                _board.TileAt(row, 2).Symbol ==
+                                _board.TileAt(row, 1).Symbol;
         }
 
         private bool IsRowTaken(int row)
