@@ -54,7 +54,7 @@ namespace TicTacToe
         private void UpdateGameState(char symbol, int x, int y)
         {
             _lastSymbol = symbol;
-            _board.AddTileAt(symbol, x, y);
+            _board.TileAt(x, y).Symbol = symbol;
         }
 
         private bool IsAlreadyPlayedTile(int x, int y)

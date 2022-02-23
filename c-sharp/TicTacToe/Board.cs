@@ -22,14 +22,5 @@ namespace TicTacToe
        {
            return _plays.Single(tile => tile.X == x && tile.Y == y);
        }
-
-       // Primitive obsession
-       // Dead code
-       // Middle man
-       public void AddTileAt(char symbol, int x, int y)
-       {
-            // Message chain
-           _plays.Single(tile => tile.X == x && tile.Y == y).Symbol = symbol;
-       }
     }
 }
