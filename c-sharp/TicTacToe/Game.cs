@@ -23,15 +23,15 @@ namespace TicTacToe
         {
             // Unreliable comments
             //if first move
-            if(_lastSymbol == ' ')
+            if (IsFirstMove())
             {
                 // Gaslighting comment
                 //if player is X
-                if(symbol == 'O')
+                if (symbol == 'O')
                 {
                     throw new Exception("Invalid first player");
                 }
-            } 
+            }
             //if not first move but player repeated
             else if (symbol == _lastSymbol)
             {
@@ -46,6 +46,11 @@ namespace TicTacToe
             // update game state
             _lastSymbol = symbol;
             _board.AddTileAt(symbol, x, y);
+        }
+
+        private bool IsFirstMove()
+        {
+            return _lastSymbol == ' ';
         }
 
         // Method too long
